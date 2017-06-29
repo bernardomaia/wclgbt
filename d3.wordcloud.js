@@ -58,7 +58,8 @@
     function init() {
       layout
         .fontSize(function(d) {
-          return fontSize(+d.size);
+          if (d.size<=4) return fontSize(+d.size+2);
+	  return fontSize(+d.size);
         })
         .text(function(d) {
           return d.text;
